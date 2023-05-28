@@ -8,6 +8,15 @@
 <meta name = "test_page" content = "test_page">
 
 <title>test_page</title>
+<style>
+
+body
+{
+background-color: RGB(249, 243, 239);
+}
+.
+
+</style>
 
 <link rel="stylesheet" type="text/css" href="styler.css">
 
@@ -37,16 +46,54 @@ function myFunction() {
 </script>
 
 <body>
+<div >
+	<button id="send" onclick="myFunction()">Инструкция</button>
 
-<button id="send" onclick="myFunction()">Инструкция</button>
-
-<div id='content'>
-<div class='tableauPlaceholder' id='viz1685102429701' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Irk_attrs_4&#47;sheet4' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1685102429701');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1950px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-</div>
+	<div id='content'>
+	<div class='tableauPlaceholder' id='viz1685102429701' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Irk_attrs_4&#47;sheet4' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1685102429701');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1950px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+	</div>
 
 
-<div id='manual' style="display:none;">
-Скоро здесь будет материал
+	<div id='manual' style="display:none;">
+		<h1>Инструкция к данному инструменту</h1>
+		<h2>Вкладки</h2>
+		<p>Инструмент состоит из двух вкладок: популярность и комфортность посещения. Популярность содержит карту с информацией о локациях, категории локаций, облако слов по отзывам и показатели популярности, основанный на отзывах, оценках и фотографиях. Комфортность посещения содержит данные о комфортности посещения локаций, основанные на загруженности и популярности места.</p>
+		<h2>Популярность мест</h2>
+		<p>На данной кладке присутствуют несколько визуализаций:
+			<ul>
+				<li>карта, на которой обозначены все точки, размер которых соответствует популярности места, а цвет - категории места;</li>
+				<li>Выбор категории, на которой вы можете выбрать интересующую вас категорию мест, по которым будет производиться поиск;</li>
+				<li>Топ мест по популярности, цвет которых соответствует категории места;</li>
+				<li>Облако слов по отзывам.</li>
+			</ul>
+			На вкладке присутствует ряд фильтров, позволяющих филтровать выдаваемые значения.
+			<ul>
+				<li>Поиск вверху страницы. Позволяет искать локации.</li>
+				<li>Категория разделения. Позволяет выбирать, на какие виды категорий будет делиться карта.</li>
+				<li>Важность отзывов. Позволяет установить то, насколько значимо количество отзывов при вычислении популярности места.</li>
+				<li>Важность рейтинга. Позволяет установить то, насколько значим рейтинг при вычислении популярности места.</li>
+				<li>Важность фото. Позволяет установить то, насколько значимо количество фото при вычислении популярности места.</li>
+				<li>Количество мест в топе. Позволяет установить то, какой диапазон мест будет выведен в топе мест, отфильтрованных по популярности</li>
+				<li>Рейтинг отзывов. Позволяет установить то, слова из каких отзывов будут использоваться для отзывов</li>
+				<li>Количество употреблений. Позволяет установить то, насколько частые слова будут использоваться в облаке</li>
+			</ul>
+			Так же фильтровать значения можно с помощью самих панелей.
+			<ul>
+				<li>В выборе категорий вы можете выбрать то, какую категорию мест будут отображать другие панели (карта, топ и облако).</li>
+				<li>В топе мест вы можете выбрать место, которое выведут карта и облако слов.</li>
+				<li>В облаке слов вы можете выбрать место, чтобы построить по нему топ мест.</li>
+			</ul>
+		</p>
+		<h2>Комфортность посещения</h2>
+			<p>Данная вкладка позволяет получить информацию о комфортности посещения места. Комфортность посещения выисляется как отношение популярности к загруженности в единицу времени. На данной вкладке присутствуют следующие визуализации
+				<ul>
+					<li>Топ мест по комфортности посещения</li>
+					<li>Тепловая карта комфортности посещения</li>
+					<li>Карта</li>
+				</ul>
+			<p> Вы можете выбрать место в топе, чтобы получить на тепловой карте график комфортности посещения этого места на всю неделю. Вы можете выбрать время на тепловой карте, чтобы получить топ мест по этому времени.
+			<p> Вы можете ограничивать время и дни вывода.
+	</div>
 </div>
 
 </body>
