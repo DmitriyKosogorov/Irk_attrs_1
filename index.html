@@ -5,16 +5,108 @@
 
 <meta name = "test_page" content = "test_page" >
 
-<meta name = "test_page" content = "test_page">
-
-<title>test_page</title>
+<title>IrkAttrs</title>
 <style>
-
+.grid
+{
+width:100%;
+height:100%;
+display:grid;
+grid-template-columns: 50px auto auto auto 50px;
+grid-template-rows: 0px 50px 1200px 100px;
+}
 body
 {
 background-color: RGB(249, 243, 239);
+padding: 0;
+margin: 0;
 }
-.
+.mainpart
+{
+grid-column-start:2;
+grid-column-end:-2;
+grid-row-start:3;
+grid-row-end:4;
+}
+.manual
+{
+grid-column-start:2;
+grid-column-end:-2;
+grid-row-start:3;
+grid-row-end:4;
+}
+.information
+{
+grid-column-start:2;
+grid-column-end:-2;
+grid-row-start:3;
+grid-row-end:4;
+}
+.menu
+{
+grid-column-start:1;
+grid-column-end:-1;
+grid-row-start:2;
+grid-row-end:3;
+background-color: RGB(0,0,0);
+}
+
+.bottom
+{
+grid-column-start:1;
+grid-column-end:-1;
+grid-row-start:4;
+grid-row-end:5;
+background-color: RGB(0,0,0);
+}
+
+.instruction
+{
+background-color: RGB(0,0,0);
+border: none;
+color: white;
+text-align: center;
+grid-column-start:4;
+grid-column-end:5;
+grid-row-start:2;
+grid-row-end:3;
+}
+
+.about
+{
+background-color: RGB(0,0,0);
+border: none;
+color: white;
+grid-column-start:3;
+grid-column-end:4;
+grid-row-start:2;
+grid-row-end:3;
+}
+
+.instrument
+{
+background-color: RGB(0,0,0);
+border: none;
+color: white;
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end:3;
+}
+
+.about:hover
+{
+color: RGB(255,255,0);
+}
+
+.instruction:hover
+{
+color: RGB(255,255,0);
+}
+.instrument:hover
+{
+color: RGB(255,255,0);
+}
 
 </style>
 
@@ -25,77 +117,120 @@ background-color: RGB(249, 243, 239);
 <html>
 
 <script>
-function myFunction() {
-    var button=document.getElementById('send');
+function myFunction(a) {
+	
 	var content=document.getElementById('content');
 	var manual=document.getElementById('manual');
+	var info=document.getElementById('information');
+	let grid= document.getElementById("grid");
+	
 	//content.style.visibility = "hidden";
-	if(button.textContent==='Инструкция')
-		{	
-			button.textContent='Главная'
+	if(a==1)
+		{
+			//инструкция
 			content.style.display = "none";
 			manual.style.display = "block";
+			info.style.display="none";
+			grid.style.gridTemplateRows = "0px 50px 2250px 100px";
 		}
-	else
-		{
-			button.textContent='Инструкция'
-			manual.style.display = "none";
+	if(a==2)
+		{	
+			//главная
 			content.style.display = "block";
+			manual.style.display = "none";
+			info.style.display="none";
+			grid.style.gridTemplateRows = "0px 50px 1200px 100px";
+		}
+	if(a==3)
+		{
+			//информация
+			manual.style.display = "none";
+			content.style.display = "none";
+			info.style.display="block";
+			grid.style.gridTemplateRows = "0px 50px 850px 100px";
 		}
 	}
 </script>
 
 <body>
-<div >
-	<button id="send" onclick="myFunction()">Инструкция</button>
 
-	<div id='content'>
-	<div class='tableauPlaceholder' id='viz1685102429701' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Irk_attrs_4&#47;sheet4' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1685102429701');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1950px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-	</div>
+<div>
+<div class = "grid" id="grid">
+	<div class="menu">	</div>
+	<button id="instrument" class="instrument" onclick="myFunction(2)">Главная</button>
+	<button id="instruction" class="instruction" onclick="myFunction(1)" >Инструкция</button>
+	<button id="about" class="about" onclick="myFunction(3)">О проекте</button>
 
 
-	<div id='manual' style="display:none;">
-		<h1>Инструкция к данному инструменту</h1>
-		<h2>Вкладки</h2>
-		<p>Инструмент состоит из двух вкладок: популярность и комфортность посещения. Популярность содержит карту с информацией о локациях, категории локаций, облако слов по отзывам и показатели популярности, основанный на отзывах, оценках и фотографиях. Комфортность посещения содержит данные о комфортности посещения локаций, основанные на загруженности и популярности места.</p>
-		<h2>Популярность мест</h2>
-		<p>На данной кладке присутствуют несколько визуализаций:
-			<ul>
-				<li>карта, на которой обозначены все точки, размер которых соответствует популярности места, а цвет - категории места;</li>
-				<li>Выбор категории, на которой вы можете выбрать интересующую вас категорию мест, по которым будет производиться поиск;</li>
-				<li>Топ мест по популярности, цвет которых соответствует категории места;</li>
-				<li>Облако слов по отзывам.</li>
-			</ul>
-			На вкладке присутствует ряд фильтров, позволяющих филтровать выдаваемые значения.
-			<ul>
-				<li>Поиск вверху страницы. Позволяет искать локации.</li>
-				<li>Категория разделения. Позволяет выбирать, на какие виды категорий будет делиться карта.</li>
-				<li>Важность отзывов. Позволяет установить то, насколько значимо количество отзывов при вычислении популярности места.</li>
-				<li>Важность рейтинга. Позволяет установить то, насколько значим рейтинг при вычислении популярности места.</li>
-				<li>Важность фото. Позволяет установить то, насколько значимо количество фото при вычислении популярности места.</li>
-				<li>Количество мест в топе. Позволяет установить то, какой диапазон мест будет выведен в топе мест, отфильтрованных по популярности</li>
-				<li>Рейтинг отзывов. Позволяет установить то, слова из каких отзывов будут использоваться для отзывов</li>
-				<li>Количество употреблений. Позволяет установить то, насколько частые слова будут использоваться в облаке</li>
-			</ul>
-			Так же фильтровать значения можно с помощью самих панелей.
-			<ul>
-				<li>В выборе категорий вы можете выбрать то, какую категорию мест будут отображать другие панели (карта, топ и облако).</li>
-				<li>В топе мест вы можете выбрать место, которое выведут карта и облако слов.</li>
-				<li>В облаке слов вы можете выбрать место, чтобы построить по нему топ мест.</li>
-			</ul>
-		</p>
-		<h2>Комфортность посещения</h2>
-			<p>Данная вкладка позволяет получить информацию о комфортности посещения места. Комфортность посещения выисляется как отношение популярности к загруженности в единицу времени. На данной вкладке присутствуют следующие визуализации
+	<div class="mainpart">
+
+		<div id='content' class='content'>
+			<div class='tableauPlaceholder' id='viz1685102429701' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Irk_attrs_4&#47;sheet4' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ir&#47;Irk_attrs_4&#47;sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1685102429701');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='850px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1420px';vizElement.style.maxWidth='1520px';vizElement.style.width='100%';vizElement.style.minHeight='610px';vizElement.style.maxHeight='910px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='850px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+		</div>
+
+
+		<div id='manual' style="display:none;" class="manual">
+			<h1>Инструкция к данному инструменту</h1>
+			<h2>Вкладки</h2>
+			<p>Инструмент состоит из двух вкладок: популярность и комфортность посещения. Популярность содержит карту с информацией о локациях, категории локаций, облако слов по отзывам и показатели популярности, основанный на отзывах, оценках и фотографиях. Комфортность посещения содержит данные о комфортности посещения локаций, основанные на загруженности и популярности места.</p>
+			<img src="PopularityComfort.png" height="255" style="border: 1px solid black;">
+			<h2>Популярность мест</h2>
+			<p>На данной кладке присутствуют несколько визуализаций:
 				<ul>
-					<li>Топ мест по комфортности посещения</li>
-					<li>Тепловая карта комфортности посещения</li>
-					<li>Карта</li>
+					<li>карта, на которой обозначены все точки, размер которых соответствует популярности места, а цвет - категории места;</li>
+					<li>Выбор категории, на которой вы можете выбрать интересующую вас категорию мест, по которым будет производиться поиск;</li>
+					<li>Топ мест по популярности, цвет которых соответствует категории места;</li>
+					<li>Облако слов по отзывам.</li>
 				</ul>
-			<p> Вы можете выбрать место в топе, чтобы получить на тепловой карте график комфортности посещения этого места на всю неделю. Вы можете выбрать время на тепловой карте, чтобы получить топ мест по этому времени.
-			<p> Вы можете ограничивать время и дни вывода.
+				На вкладке присутствует ряд фильтров, позволяющих филтровать выдаваемые значения.
+				<ul>
+					<li>Поиск вверху страницы. Позволяет искать локации.</li>
+					<li>Категория разделения. Позволяет выбирать, на какие виды категорий будет делиться карта.</li>
+					<li>Важность отзывов. Позволяет установить то, насколько значимо количество отзывов при вычислении популярности места.</li>
+					<li>Важность рейтинга. Позволяет установить то, насколько значим рейтинг при вычислении популярности места.</li>
+					<li>Важность фото. Позволяет установить то, насколько значимо количество фото при вычислении популярности места.</li>
+					<li>Количество мест в топе. Позволяет установить то, какой диапазон мест будет выведен в топе мест, отфильтрованных по популярности</li>
+					<li>Рейтинг отзывов. Позволяет установить то, слова из каких отзывов будут использоваться для отзывов</li>
+					<li>Количество употреблений. Позволяет установить то, насколько частые слова будут использоваться в облаке</li>
+				</ul>
+				<p style="margin-bottom:0px;"><img src="typeChooser.png" height="255" width="500" style="border: 1px solid black;"><img src="wordsCount.png" height="255" style="border: 1px solid black;">
+				<p style="margin-top:0px;"><img src="weigths.png" height="255" width="500" style="border: 1px solid black;"><img src="numberOfPlaces.png" height="255" style="border: 1px solid black;">
+				<p>Панель установки весов
+				<p>Так же фильтровать значения можно с помощью самих панелей.
+				<ul>
+					<li>В выборе категорий вы можете выбрать то, какую категорию мест будут отображать другие панели (карта, топ и облако).</li>
+					<li>В топе мест вы можете выбрать место, которое выведут карта и облако слов.</li>
+					<li>В облаке слов вы можете выбрать место, чтобы построить по нему топ мест.</li>
+				</ul>
+			</p>
+			<h2>Комфортность посещения</h2>
+				<p>Данная вкладка позволяет получить информацию о комфортности посещения места. Комфортность посещения выисляется как отношение популярности к загруженности в единицу времени. На данной вкладке присутствуют следующие визуализации
+					<ul>
+						<li>Топ мест по комфортности посещения</li>
+						<li>Тепловая карта комфортности посещения</li>
+						<li>Карта</li>
+					</ul>
+				<p> Вы можете выбрать место в топе, чтобы получить на тепловой карте график комфортности посещения этого места на всю неделю. Вы можете выбрать время на тепловой карте, чтобы получить топ мест по этому времени.
+				<p> Вы можете ограничивать время и дни вывода.
+				<p style="margin-bottom:0px;"><img src="Day.png" height="255" style="border: 1px solid black;"><img src="Time.png" height="255" style="border: 1px solid black;">
+				<p style="margin-top:0px;"><img src="Category.png" height="255" style="border: 1px solid black;"><img src="Chooser.png" height="255" style="border: 1px solid black;">
+		</div>
+		
+		
+		<div class="information" id="information" style="display:none;">
+			<h1>Основы исследования</h1>
+			<h2>Вычислениея показателей</h2>
+			<p>Данный инструмент позволяет 
+			<p>Первый целевой показатель - популярность места. Популярность места вычисляется по сумме средневзвешенных арифметических групповых показателей:
+			<p style="text-align: center;">P = X<sub>rat</sub>*W<sub>rat</sub>+X<sub>rev</sub>*W<sub>rev</sub>+X<sub>pht</sub>*W<sub>pht</sub>
+			<p>где X - нормированный показатель величины, W - вес (значимость) величины, rat - рейтинг, rev - количество отзывов, pht - количество фото.
+			<p>Второй целевой показатель - комфортность посещения. Комфортность вычисляется как отношение популярности места к его загруженности в конкретный момент времени. Считается, то наибольшей комфортностью посещения обладают места с высокой популярностью в моменты, когда они меньше всего загружены.
+			<p style="text-align: center;">O<sub>i</sub>=P<sub>i</sub>/V<sub>i,d,t</sub>
+		</div>
 	</div>
-</div>
 
+	<div class='bottom'></div>
+</div>
 </body>
 
 </html>
