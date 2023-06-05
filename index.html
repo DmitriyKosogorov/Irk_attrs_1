@@ -13,7 +13,7 @@ width:100%;
 height:100%;
 display:grid;
 grid-template-columns: 50px auto auto auto 50px;
-grid-template-rows: 0px 50px 1500px 100px;
+grid-template-rows: 0px 50px 1200px auto 100px;
 }
 body
 {
@@ -26,21 +26,21 @@ margin: 0;
 grid-column-start:2;
 grid-column-end:-2;
 grid-row-start:3;
-grid-row-end:4;
+grid-row-end:5;
 }
 .manual
 {
 grid-column-start:2;
 grid-column-end:-2;
 grid-row-start:3;
-grid-row-end:4;
+grid-row-end:5;
 }
 .information
 {
 grid-column-start:2;
 grid-column-end:-2;
 grid-row-start:3;
-grid-row-end:4;
+grid-row-end:5;
 }
 .menu
 {
@@ -55,8 +55,8 @@ background-color: RGB(0,0,0);
 {
 grid-column-start:1;
 grid-column-end:-1;
-grid-row-start:4;
-grid-row-end:5;
+grid-row-start:5;
+grid-row-end:6;
 background-color: RGB(0,0,0);
 }
 
@@ -131,7 +131,7 @@ function myFunction(a) {
 			content.style.display = "none";
 			manual.style.display = "block";
 			info.style.display="none";
-			grid.style.gridTemplateRows = "0px 50px 2250px 100px";
+			grid.style.gridTemplateRows = "0px 50px 2250px auto 100px";
 		}
 	if(a==2)
 		{	
@@ -139,7 +139,7 @@ function myFunction(a) {
 			content.style.display = "block";
 			manual.style.display = "none";
 			info.style.display="none";
-			grid.style.gridTemplateRows = "0px 50px 1500px 100px";
+			grid.style.gridTemplateRows = "0px 50px 1200px auto 100px";
 		}
 	if(a==3)
 		{
@@ -147,7 +147,7 @@ function myFunction(a) {
 			manual.style.display = "none";
 			content.style.display = "none";
 			info.style.display="block";
-			grid.style.gridTemplateRows = "0px 50px 850px 100px";
+			grid.style.gridTemplateRows = "0px 50px 850px auto 100px";
 		}
 	}
 </script>
